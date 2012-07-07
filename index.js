@@ -9,7 +9,7 @@ module.exports = function(options) {
     , checkout = options.checkout
     , hash = crypto.createHash('md5').update(repo + checkout).digest('hex')
     , cache = '/tmp/' + hash
-    , exists = path.existsSync(cache)
+    , exists = fs.existsSync(cache)
     , dir = exists ? cache : '/tmp'
     , debug = options.debug
   ;
